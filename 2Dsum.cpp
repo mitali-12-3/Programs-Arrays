@@ -22,7 +22,13 @@ void colSum(vector<vector<int>>arr, int rowSize, int colSize){
         cout<<sum<<endl;
     }
 }
-
+void diagsum(vector<vector<int>>arr, int rowSize){
+    int sum=0;
+    for(int i=0; i< rowSize;i++){
+        sum+=arr[i][i];
+    }
+    cout<<sum<<endl;
+}
 int main(){
     vector<vector<int>>arr(3,vector<int>(4,0));
     cout<<"Inserting elements:"<<endl;
@@ -38,7 +44,8 @@ int main(){
         cout<<"Menu"<<endl;
         cout<<"1. Row wise sum"<<endl;
         cout<<"2. Column wise sum"<<endl;
-        cout<<"3. Exit"<<endl;
+        cout<<"3. Diagonal sum"<<endl;
+        cout<<"4. Exit"<<endl;
         cout << "Enter choice: ";
         cin >> choice;
         switch(choice){
@@ -56,6 +63,12 @@ int main(){
             }
             case 3:
             {
+                cout<<"Diagonal sum"<<endl;
+                diagsum(arr,rowSize);
+                break;
+            }
+            case 4:
+            {
                 cout<<"Exiting now";
                 break;
             }
@@ -63,6 +76,6 @@ int main(){
                 cout<<"Invalid";
                 break;
         }
-    }while(choice!=3);
+    }while(choice!=4);
     return 0;
 }
